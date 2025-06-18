@@ -25,7 +25,7 @@ namespace SensorsGame3.Managers
             attempts = 0;
             _currentSessionUsedSensors = new List<SensorType>();
             _budget = difficulty == Difficulty.Easy ? 150 : difficulty == Difficulty.Medium ? 100 : 70;
-            _timeLimit = difficulty == Difficulty.Hard ? 10 : 20;
+            _timeLimit = difficulty == Difficulty.Hard ? 20 : 30;
             _comboGuessed = false;
         }
 
@@ -36,13 +36,12 @@ namespace SensorsGame3.Managers
             Console.WriteLine($"Target: {currentAgent.Rank}");
             Console.WriteLine($"Required Sensors: {GetRequiredSensorsCount()}");
             Console.WriteLine("----------------------------------------");
-
             //GameLogger.Clear();
             WeatherService.GenerateWeather();
             Console.WriteLine($"Weather Today: {WeatherService.CurrentWeather}");
             Console.WriteLine($"Starting Budget: {_budget}");
 
-            int maxAttemptsForAgent = (currentAgent.Rank == AgentRank.FootSoldier) ? 5 : 10;
+            int maxAttemptsForAgent = (currentAgent.Rank == AgentRank.FootSoldier) ? 5 : 15;
 
             try
             {
