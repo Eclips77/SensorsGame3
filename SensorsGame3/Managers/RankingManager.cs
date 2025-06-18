@@ -1,8 +1,6 @@
-using SensorsGame3.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using SensorsGame3.Tools;
 
 namespace SensorsGame3.Managers
 {
@@ -13,13 +11,13 @@ namespace SensorsGame3.Managers
             var history = GameHistory.Instance;
             var entries = history.GetAllEntries();
             var scoresByPlayer = new Dictionary<string, List<int>>();
-            foreach (var e in entries)
+            foreach (var entry in entries)
             {
-                if (!scoresByPlayer.ContainsKey(e.Username))
-                    scoresByPlayer[e.Username] = new List<int>();
-                scoresByPlayer[e.Username].Add(e.Score);
+                if (!scoresByPlayer.ContainsKey(entry.Username))
+                    scoresByPlayer[entry.Username] = new List<int>();
+                scoresByPlayer[entry.Username].Add(entry.Score);
             }
-
+            //return players list order by score
             var rankings = scoresByPlayer
                 .Select(kvp => new { Player = kvp.Key, Score = kvp.Value.Sum() })
                 .OrderByDescending(x => x.Score)

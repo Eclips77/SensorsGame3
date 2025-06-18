@@ -1,10 +1,6 @@
 ﻿using SensorsGame3.Managers;
 using SensorsGame3.Tools;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SensorsGame3
 {
