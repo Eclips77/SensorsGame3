@@ -15,7 +15,7 @@ namespace SensorsGame3.Tools
             _connectionString = connectionString;
         }
 
-        public void Insert(GameHistoryEntry entry)
+        public void InsertHistoryEntry(GameHistoryEntry entry)
         {
             try
             {
@@ -59,7 +59,7 @@ namespace SensorsGame3.Tools
             return list;
         }
 
-        public List<GameHistoryEntry> GetAll()
+        public List<GameHistoryEntry> GetAllHistory()
         {
             var list = new List<GameHistoryEntry>();
             try

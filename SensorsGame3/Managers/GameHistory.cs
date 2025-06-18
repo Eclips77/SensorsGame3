@@ -46,7 +46,7 @@ namespace SensorsGame3.Managers
                     Victory = session.Victory,
                     Timestamp = session.Date
                 };
-                _historyDal.Insert(entry);
+                _historyDal.InsertHistoryEntry(entry);
             }
             catch (Exception ex)
             {
@@ -64,7 +64,7 @@ namespace SensorsGame3.Managers
             {
                 if (string.IsNullOrWhiteSpace(username))
                 {
-                    entries = _historyDal.GetAll();
+                    entries = _historyDal.GetAllHistory();
                 }
                 else
                 {
@@ -148,7 +148,7 @@ namespace SensorsGame3.Managers
         {
             try
             {
-                return _historyDal.GetAll();
+                return _historyDal.GetAllHistory();
             }
             catch (Exception ex)
             {

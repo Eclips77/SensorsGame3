@@ -1,5 +1,6 @@
 using MySql.Data.MySqlClient;
 using System;
+using System.Collections.Generic;
 
 namespace SensorsGame3.Tools
 {
@@ -33,9 +34,9 @@ namespace SensorsGame3.Tools
             }
         }
 
-        public System.Collections.Generic.List<string> GetAllUsernames()
+        public List<string> GetAllUsernames()
         {
-            var list = new System.Collections.Generic.List<string>();
+            var list = new List<string>();
             try
             {
                 using (var conn = new MySqlConnection(_connectionString))
